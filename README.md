@@ -2,4 +2,4 @@
 
 
 
-[https://virtual-driving-flatform.readthedocs.io](https://virtual-driving-flatform.readthedocs.io)
+[https://carla-thinking.readthedocs.io](https://virtual-driving-flatform.readthedocs.io)
