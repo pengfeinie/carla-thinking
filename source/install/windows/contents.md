@@ -24,18 +24,32 @@ The following requirements should be fulfilled before installing CARLA:
 
 - **Python.** [Python](https://carla.readthedocs.io/en/latest/start_quickstart/(https://www.python.org/downloads/)) is the main scripting language in CARLA. CARLA supports Python 2.7 and Python 3 on Linux, and Python 3 on Windows.
 
-- **Pip.** Some installation methods of the CARLA client library require **pip** or **pip3** (depending on your Python version) version 20.3 or higher. To check your **pip** version:
-
-  ```
-   # For Python 3
-   pip3 -V
-  ```
-
-  ![](images/2022-08-14_150431.png)
+- **Pip.** Some installation methods of the CARLA client library require **pip** or **pip3** (depending on your Python version) version 20.3 or higher.
 
 - **Two TCP ports and good internet connection.** 2000 and 2001 by default. Make sure that these ports are not blocked by firewalls or any other applications.
 
 - **Other requirements.** CARLA requires some Python dependencies. Install the dependencies according to your operating system.
+
+  ```
+  python -m ensurepip
+  easy_install pip
+  python -m pip install --upgrade pip
+  ```
+
+  ![](images/2022-08-14_153618.png)
+
+
+
+
+
+
+
+
+
+
+
+- 
+
 
 ### 2.2 CARLA installation
 
