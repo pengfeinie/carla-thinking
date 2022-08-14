@@ -17,39 +17,30 @@ The following requirements should be fulfilled before installing CARLA:
 The following requirements should be fulfilled before installing CARLA:
 
 - **System requirements.** CARLA is built for Windows and Linux systems.
-
 - **An adequate GPU.** CARLA aims for realistic simulations, so the server needs at least a 6 GB GPU although we would recommend 8 GB. A dedicated GPU is highly recommended for machine learning.
-
 - **Disk space.** CARLA will use about 20 GB of space.
-
 - **Python.** [Python](https://carla.readthedocs.io/en/latest/start_quickstart/(https://www.python.org/downloads/)) is the main scripting language in CARLA. CARLA supports Python 2.7 and Python 3 on Linux, and Python 3 on Windows.
-
 - **Pip.** Some installation methods of the CARLA client library require **pip** or **pip3** (depending on your Python version) version 20.3 or higher.
-
 - **Two TCP ports and good internet connection.** 2000 and 2001 by default. Make sure that these ports are not blocked by firewalls or any other applications.
-
 - **Other requirements.** CARLA requires some Python dependencies. Install the dependencies according to your operating system.
 
-  ```
-  python -m ensurepip
-  easy_install pip
-  python -m pip install --upgrade pip
-  ```
+```
+python -m ensurepip
+easy_install pip
+python -m pip install --upgrade pip
+```
 
-  ![](images/2022-08-14_153618.png)
+![](images/2022-08-14_153618.png)
 
+```
+pip3 -V
+```
 
+![](images/2022-08-14_154638.png)
 
-
-
-
-
-
-
-
-
-- 
-
+```
+pip3 install --user pygame numpy
+```
 
 ### 2.2 CARLA installation
 
