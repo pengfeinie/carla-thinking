@@ -12,7 +12,9 @@ This guide shows how to download and install the packaged version of CARLA. The 
 
 The following requirements should be fulfilled before installing CARLA:
 
-#### 2.1.1 Attention
+[https://carla.readthedocs.io/en/latest/start_quickstart/#before-you-begin](https://carla.readthedocs.io/en/latest/start_quickstart/#before-you-begin)
+
+The following requirements should be fulfilled before installing CARLA:
 
 - **System requirements.** CARLA is built for Windows and Linux systems.
 
@@ -22,45 +24,40 @@ The following requirements should be fulfilled before installing CARLA:
 
 - **Python.** [Python](https://carla.readthedocs.io/en/latest/start_quickstart/(https://www.python.org/downloads/)) is the main scripting language in CARLA. CARLA supports Python 2.7 and Python 3 on Linux, and Python 3 on Windows.
 
-- **Pip.** Some installation methods of the CARLA client library require **pip** or **pip3** (depending on your Python version) version 20.3 or higher. 
+- **Pip.** Some installation methods of the CARLA client library require **pip** or **pip3** (depending on your Python version) version 20.3 or higher. To check your **pip** version:
+
+  ```
+   # For Python 3
+   pip3 -V
+  ```
+
+  ![](images/2022-08-14_150431.png)
 
 - **Two TCP ports and good internet connection.** 2000 and 2001 by default. Make sure that these ports are not blocked by firewalls or any other applications.
 
 - **Other requirements.** CARLA requires some Python dependencies. Install the dependencies according to your operating system.
 
-  #### 2.1.2 Tips
+### 2.2 CARLA installation
 
-   To check your **pip** version:
+[https://carla.readthedocs.io/en/latest/start_quickstart/#carla-installation](https://carla.readthedocs.io/en/latest/start_quickstart/#carla-installation)
 
-  ```
-   # For Python 3
-   pip3 -V
-   # For Python 3, If you need to upgrade:
-   pip3 install --upgrade pip
-  ```
+Now I just downloaded [https://carla-releases.s3.eu-west-3.amazonaws.com/Windows/CARLA_0.9.13.zip](https://carla-releases.s3.eu-west-3.amazonaws.com/Windows/CARLA_0.9.13.zip) in my windows system. 
 
-   Install the dependencies according to your operating system:
+Download and extract the release file. It contains a precompiled version of the simulator, the Python API module and some scripts to be used as examples.
 
-  ```
-  # Windows
-  pip3 install --user pygame numpy
-  
-  # Linux
-  pip install --user pygame numpy &&
-  pip3 install --user pygame numpy
-  ```
+### 2.3 Import additional assets
 
-  ### 2.2 CARLA installation
+[https://carla.readthedocs.io/en/latest/start_quickstart/#import-additional-assets](https://carla.readthedocs.io/en/latest/start_quickstart/#import-additional-assets)
 
-  There are two methods to download and install CARLA as a package:
+Now I just downloaded  [https://carla-releases.s3.eu-west-3.amazonaws.com/Windows/AdditionalMaps_0.9.13.zip](https://carla-releases.s3.eu-west-3.amazonaws.com/Windows/AdditionalMaps_0.9.13.zip) in my windows system. 
 
-  **A)** [Download the Debian package.](https://carla.readthedocs.io/en/latest/start_quickstart/#a-debian-carla-installation)
+### 2.4 Install Client Library
 
-  **B)** [Download the package from GitHub.](https://carla.readthedocs.io/en/latest/start_quickstart/#b-package-installation)
+https://carla.readthedocs.io/en/latest/start_quickstart/#install-client-library
 
 
 
-## Reference
+## 3. Reference
 
 1. [https://carla.org/](https://carla.org/)
 2. [https://carla.readthedocs.io/en/latest/start_quickstart/](https://carla.readthedocs.io/en/latest/start_quickstart/)
