@@ -42,6 +42,8 @@ pip3 -V
 pip3 install --user pygame numpy
 ```
 
+![](images/2022-08-15_162616.png)
+
 ### 2.2 CARLA installation
 
 [https://carla.readthedocs.io/en/latest/start_quickstart/#carla-installation](https://carla.readthedocs.io/en/latest/start_quickstart/#carla-installation)
@@ -59,6 +61,22 @@ Now I just downloaded  [https://carla-releases.s3.eu-west-3.amazonaws.com/Window
 ### 2.4 Install Client Library
 
 https://carla.readthedocs.io/en/latest/start_quickstart/#install-client-library
+
+```
+pip3 install carla-0.9.13-cp37-cp37m-win_amd64.whl
+```
+
+![](images/2022-08-15_163806.png)
+
+### Running CARLA
+
+```
+ cd D:\softwareinstalledhome\carla_0913\WindowsNoEditor
+ 
+ CarlaUE4.exe
+```
+
+
 
 
 
