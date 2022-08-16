@@ -58,7 +58,7 @@ Download and extract the release file. It contains a precompiled version of the 
 
 ![](images/2022-08-16_104528.png)
 
-**Running CARLA Examples - automatic_control.py**
+**Running CARLA Examples - spawn_npc.py**
 
 ```
  cd D:\softwareinstalledfiles\CARLA_0.9.8\WindowsNoEditor\PythonAPI\examples
@@ -67,6 +67,22 @@ Download and extract the release file. It contains a precompiled version of the 
 ```
 
 ![](images/2022-08-16_112211.png)
+
+**Running CARLA Examples (add extra parameters) - spawn_npc.py** 
+
+Open spawn_npc.py , you can find that we can add some extra parameters , for example, n , add specific vehicle numbers.
+
+![](images/2022-08-16_112859.png)
+
+```
+ cd D:\softwareinstalledfiles\CARLA_0.9.8\WindowsNoEditor\PythonAPI\examples
+
+ python spawn_npc.py -n 150
+```
+
+![](images/2022-08-16_113151.png)
+
+
 
 ## 3. Reference
 
