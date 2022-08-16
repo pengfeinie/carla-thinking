@@ -12,7 +12,7 @@ This guide shows how to download and install the packaged version of CARLA. The 
 
 The following requirements should be fulfilled before installing CARLA:
 
-[https://carla.readthedocs.io/en/latest/start_quickstart/#before-you-begin](https://carla.readthedocs.io/en/latest/start_quickstart/#before-you-begin)
+[https://carla.readthedocs.io/en/0.9.8/start_quickstart/](https://carla.readthedocs.io/en/0.9.8/start_quickstart/)
 
 The following requirements should be fulfilled before installing CARLA:
 
@@ -48,17 +48,27 @@ Download and extract the release file. It contains a precompiled version of the 
 
 ![](images/2022-08-16_104233.png)
 
-**Running CARLA Examples**
+**Running CARLA Examples - automatic_control.py**
 
 ```
  cd D:\softwareinstalledfiles\CARLA_0.9.8\WindowsNoEditor\PythonAPI\examples
 
- automatic_control.py
+ python automatic_control.py
 ```
 
 ![](images/2022-08-16_104528.png)
 
+**Running CARLA Examples - automatic_control.py**
+
+```
+ cd D:\softwareinstalledfiles\CARLA_0.9.8\WindowsNoEditor\PythonAPI\examples
+
+ python spawn_npc.py
+```
+
+![](images/2022-08-16_112211.png)
+
 ## 3. Reference
 
 1. [https://carla.org/](https://carla.org/)
-2. [https://carla.readthedocs.io/en/latest/start_quickstart/](https://carla.readthedocs.io/en/latest/start_quickstart/)
+2. [https://carla.readthedocs.io/en/0.9.8/start_quickstart/](https://carla.readthedocs.io/en/0.9.8/start_quickstart/)
