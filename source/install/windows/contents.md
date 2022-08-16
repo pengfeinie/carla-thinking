@@ -82,6 +82,18 @@ Open spawn_npc.py , you can find that we can add some extra parameters , for exa
 
 ![](images/2022-08-16_113151.png)
 
+**Running CARLA Examples - dynamic_weather.py** 
+
+```
+ cd D:\softwareinstalledfiles\CARLA_0.9.8\WindowsNoEditor\PythonAPI\examples
+
+ python dynamic_weather.py
+```
+
+![](images/2022-08-16_113925.png)
+
+![](images/2022-08-16_114141.png)
+
 
 
 ## 3. Reference
