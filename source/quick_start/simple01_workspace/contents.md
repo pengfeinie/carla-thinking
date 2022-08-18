@@ -81,7 +81,7 @@ finally:
 
 Please double click CarlaUE4.exe to start Carla server.
 
-### 3.2 Run Hello world
+### 3.2 Run Hello World
 
 ![](images/2022-08-18_114730.png)
 
