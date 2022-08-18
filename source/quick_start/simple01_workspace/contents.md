@@ -1,75 +1,96 @@
-# hello world for command
+# hello world
 
-**Step1: create workspace and initialization**
+## 1. Installed Carla Library into Python Environment
 
-```
-mkdir -p simple01_workspace/src
-cd simple01_workspace
-catkin_make
-```
-
-![](images/2022-06-09_125711.png)
-
-**Step2: create dependency package**
+Even we can run examples code in Carla environment, and you can find some code recipe as below:
 
 ```
-cd src
-catkin_create_pkg hello_command roscpp rospy std_msgs
+try:
+    sys.path.append(glob.glob('../carla/dist/carla-*%d.%d-%s.egg' % (
+        sys.version_info.major,
+        sys.version_info.minor,
+        'win-amd64' if os.name == 'nt' else 'linux-x86_64'))[0])
+except IndexError:
+    pass
+
+import carla
 ```
 
-![](images/2022-06-09_185516.png)
-
-The above command will generate a function package in the workspace, which depends on roscpp, rospy and std_msgs, where roscpp is a library implemented in C++, rospy is a library implemented in python, and std_msgs is a standard message library. Create When ROS function packages are used, they generally rely on these three libraries for implementation.
-
-**Step3: add hello.cp in /src/hello_command/src folder**
-
-```c++
-#include "ros/ros.h"
-
-int main(int argc, char *argv[])
-{
-    ros::init(argc,argv,"hello");
-    ros::NodeHandle n;
-    ROS_INFO("hello world!");
-    return 0;
-}
-```
-
-![](images/2022-06-09_185752.png)
-
-**Step4: update CMakelist.txt**
-
-Before we build the package, you can add the following few lines to the bottom of your CMakeLists.txt. Or you can search the cmake functions to make changes. The second ways is preferred as you gain more experience with ROS. But the first method is fine.
+This operation is not beautiful when you wanna code every time, it is easy to get the wrong path, so we need to do the following steps first:
 
 ```
-add_executable(hello src/hello.cpp)
-target_link_libraries(hello ${catkin_LIBRARIES})
+easy_install carla-0.9.8-py3.7-win-amd64.egg
 ```
 
-![](images/2022-06-09_190525.png)
+![](images/2022-08-17_101317.png)
 
-**Step5: make**
+## 2. World and Client
 
-```
-cd simple01_workspace
-catkin_make
-```
+### 2.1 Client
 
-![](images/2022-06-09_190644.png)
-
-**Step6:  start roscore** **& start hello_command**
+Two things are needed: The IP address identifying it and two TCP ports the client will be using to communicate with the server. And If you wanna more information about this, please access [https://carla.readthedocs.io/en/0.9.8/core_world/#client-creation](https://carla.readthedocs.io/en/0.9.8/core_world/#client-creation) .
 
 ```
-roscore
-
-cd simple01_workspace
-source ./devel/setup.bash
-rosrun hello_command hello
+client = carla.Client('localhost', 2000)
 ```
 
-![](images/2022-06-09_191034.png)
+Once the client is created, set its time-out. This limits all networking operations so that these don't block forever the client but return an error instead if connection fails.
 
-**Reference：**
+```
+client.set_timeout(10.0) # seconds
+```
 
-1. [http://wiki.ros.org/action/fullsearch/catkin/commands/catkin_make](http://wiki.ros.org/action/fullsearch/catkin/commands/catkin_make)
-2. [https://docs.ros.org/en/rolling/Tutorials/Creating-Your-First-ROS2-Package.html](https://docs.ros.org/en/rolling/Tutorials/Creating-Your-First-ROS2-Package.html)
+### 2.2 World
+
+Being the simulation running, a configured client can connect and retrieve the current world easily:
+
+```
+world = client.get_world()
+```
+
+The client can also get a list of available maps to change the current one. This will destroy the current world and create a new one.
+
+```
+maps = client.get_available_maps();
+print(maps)
+world = client.load_world('Town05')
+```
+
+### 2.3 Hello World Code
+
+```
+import carla
+
+
+try: 
+    client = carla.Client("localhost", 2000)
+    client.set_timeout(10)
+    world = client.get_world()
+    maps = client.get_available_maps()
+    print(maps)
+    world = client.load_world('Town05')
+    world = client.load_world('Town04')
+    
+finally:
+    print("all cleaned up.")
+```
+
+## 3. Run Demonstration
+
+### 3.1 Start Carla Server
+
+Please double click CarlaUE4.exe to start Carla server.
+
+### 3.2 Run Hello world
+
+![](images/2022-08-18_114730.png)
+
+<video width="700" controls>
+	<source src="/en/latest/_static/HelloWorld01.mp4" />
+</video>
+
+## 4. Reference
+
+1. [https://carla.org/](https://carla.org/)
+2. [https://carla.readthedocs.io/en/0.9.8/start_quickstart/](https://carla.readthedocs.io/en/0.9.8/start_quickstart/)
+3. [https://carla.readthedocs.io/en/0.9.8/core_world/](https://carla.readthedocs.io/en/0.9.8/core_world/)
